@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   Search, Send, MessageSquare, Anchor, 
-  Mountain, Plane, Sparkles, X, Menu, Phone
+  Mountain, Plane, Sparkles, X, Phone
 } from "lucide-react";
 
 export default function HomePage() {
@@ -42,7 +42,7 @@ export default function HomePage() {
       });
       const data = await res.json();
       setMessages(prev => [...prev, { role: "assistant", content: data.text }]);
-    } catch (err) {
+    } catch {
       setMessages(prev => [...prev, { role: "assistant", content: "Lo siento, estoy teniendo un momento de desconexión. ¿Podemos seguir por WhatsApp?" }]);
     } finally {
       setIsLoading(false);
@@ -211,7 +211,7 @@ export default function HomePage() {
                 <div className="text-center py-20 px-10">
                    <Sparkles className="w-8 h-8 mx-auto mb-6 opacity-20 text-amber-400" />
                    <p className="text-sm opacity-40 leading-relaxed italic">
-                      "Soy Maya, tu insider personal. Cuéntame cómo imaginas tu día perfecto o déjame sorprenderte con los secretos de la costa."
+                      &quot;Soy Maya, tu insider personal. Cuéntame cómo imaginas tu día perfecto o déjame sorprenderte con los secretos de la costa.&quot;
                    </p>
                 </div>
               )}
