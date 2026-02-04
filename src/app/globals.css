@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #d4af37; /* Gold Metallic */
+  --accent: #1e293b;
+  --glass: rgba(255, 255, 255, 0.03);
+}
+
+@layer base {
+  body {
+    @apply bg-zinc-950 text-zinc-100 selection:bg-amber-500/30 selection:text-amber-200;
+  }
+  h1, h2, h3, .serif {
+    @apply font-playfair;
+  }
+}
+
+@layer components {
+  .luxe-btn {
+    @apply px-10 py-4 bg-transparent border border-white/20 text-white rounded-full 
+           hover:bg-white hover:text-black transition-all duration-700 uppercase tracking-[4px] text-[10px] font-bold;
+  }
+  
+  .glass-panel {
+    @apply bg-white/[0.02] backdrop-blur-2xl border border-white/10 rounded-3xl;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-amber-200 via-yellow-400 to-amber-700;
+  }
+}
+
+/* Custom Overrides */
+.font-montserrat { font-family: var(--font-montserrat); }
+.font-playfair { font-family: var(--font-playfair); }
+.font-inter { font-family: var(--font-inter); }
